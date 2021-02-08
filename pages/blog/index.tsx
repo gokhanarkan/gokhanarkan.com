@@ -1,10 +1,32 @@
 import Layout from "../../components/Layout";
+import Link from "next/link";
 
-const index = () => {
+const NOTION_BLOG_ID = "1099525da7e5405c961706de56622ccd";
+
+export const getAllPosts = async () => {
+  return await fetch(
+    `https://notion-api.splitbee.io/v1/table/${NOTION_BLOG_ID}`
+  ).then((res) => res.json());
+};
+
+export async function getStaticProps() {
+  const posts = await getAllPosts();
+  return {
+    props: {
+      posts,
+    },
+  };
+}
+
+const index = ({posts}) => {
   return (
     <Layout>
-      <div className="container">
-        <h1>Hello world</h1>
+      <div>
+        {posts.map((post) => (
+          <Link href="/blog/[slug]" as={`/blog/${post.slug}`}>
+            <div>{post.title}</div>
+          </Link>
+        ))}
       </div>
     </Layout>
   );
