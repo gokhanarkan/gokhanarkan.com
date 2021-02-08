@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  font-family: "system-ui", sans-serif;
+  @apply bg-white;
+  color: #222;
+  font-weight: 200;
+  height: 100%;
+}
+
+#__next {
+  height: 100%;
+}
+
+a {
+  color: #9b9b9b;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:active,
+a:hover {
+  color: #000;
+}
+
+.link {
+  color: hsl(10, 80%, 50%);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.link:active,
+.link:hover {
+  color: hsl(10, 20%, 50%);
+}
