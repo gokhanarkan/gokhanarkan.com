@@ -1,0 +1,19 @@
+{
+  "base_url": "gokhanarkan.com",
+  "site_title": "Gökhan Arkan",
+  "site_description": "Personal landing page and blog of Gökhan Arkan.",
+  "site_keywords": [
+    {
+      "keyword": "Gökhan Arkan"
+    },
+    {
+      "keyword": "Blog"
+    },
+    {
+      "keyword": "Personal Landing Page"
+    }
+  ],
+  "posts_per_page": 5,
+  "twitter_account": "@gokhanarkan",
+  "github_account": "gokhj"
+}
