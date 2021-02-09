@@ -9,7 +9,7 @@ export default function Home() {
       <BasicMeta url={"/"} />
       <div className={styles.container + " mx-auto"}>
         <div className="pb-6">
-          <h1 className={styles.heading}>Gökhan Arkan</h1>
+          <h1 className={styles.heading}>Gökhan Arkan.</h1>
           <span className={styles.occupation}>
             Software Engineer & Tea Lover
           </span>
