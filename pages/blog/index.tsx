@@ -1,5 +1,7 @@
-import Layout from "../../components/Layout";
 import Link from "next/link";
+
+import Layout from "../../components/Layout";
+import BasicMeta from "../../components/meta/BasicMeta";
 
 const NOTION_BLOG_ID = "4e5c7cf91b0543ca83cd90388f3bd38d";
 
@@ -23,6 +25,7 @@ export async function getStaticProps() {
 const Blog = ({ posts }) => {
   return (
     <Layout>
+      <BasicMeta url={"/blog"} />
       <div className={styles.container + " mx-auto"}>
         <div className="text-center mx-auto">
           <h1 className={styles.heading}>Blog</h1>

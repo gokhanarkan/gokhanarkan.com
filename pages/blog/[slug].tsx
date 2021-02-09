@@ -1,7 +1,8 @@
 import Link from "next/link";
+import { NotionRenderer } from "react-notion";
 
 import Layout from "../../components/Layout";
-import { NotionRenderer } from "react-notion";
+import BasicMeta from "../../components/meta/BasicMeta";
 
 import { getAllPosts } from "./";
 
@@ -24,22 +25,37 @@ export async function getStaticProps({ params: { slug } }) {
   };
 }
 
-const SinglePost = ({ post, blocks }) => (
-  <Layout>
-    <div className={styles.container + " mx-auto"}>
-      <div style={{ maxWidth: 768 }}>
-        <div>
-          <Link href="/blog">Go back</Link>
-        </div>
-        <h1 className={styles.heading}>{post.title}</h1>
-        <NotionRenderer blockMap={blocks} />
-        <div className="pb-6">
-          <Link href="/blog">Go back</Link>
+const SinglePost = ({ post, blocks }) => {
+  return (
+    <Layout>
+      <BasicMeta url={`/blog/${post.slug}`} />
+      <div className={styles.container + " mx-auto"}>
+        <div className="post">
+          <div>
+            <Link href="/blog">Go back</Link>
+          </div>
+          <h1 className={styles.heading}>{post.title}</h1>
+          <NotionRenderer blockMap={blocks} />
+          <div className="pb-6">
+            <Link href="/blog">Go back</Link>
+          </div>
         </div>
       </div>
-    </div>
-  </Layout>
-);
+      <style jsx>
+        {`
+          .post {
+            max-width: 768px;
+          }
+          @media (max-width: 769px) {
+            .post {
+              max-width: 18rem;
+            }
+          }
+        `}
+      </style>
+    </Layout>
+  );
+};
 
 export async function getStaticPaths() {
   const posts = await getAllPosts();

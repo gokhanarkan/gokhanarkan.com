@@ -3,7 +3,7 @@
   justify-content: center;
   flex: 1 1 auto;
   padding: 0 1.5rem;
-  max-width: 48rem;
+  max-width: 768px;
   margin-top: 4rem;
 }
 .heading {

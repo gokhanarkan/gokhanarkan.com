@@ -3,14 +3,12 @@ import Layout from "../components/Layout";
 
 import styles from "../styles/Home.module.css";
 
-
 export default function Home() {
-
   return (
     <Layout>
       <BasicMeta url={"/"} />
       <div className={styles.container + " mx-auto"}>
-        <div>
+        <div className="pb-6">
           <h1 className={styles.heading}>Gökhan Arkan</h1>
           <span className={styles.occupation}>
             Software Engineer & Tea Lover
