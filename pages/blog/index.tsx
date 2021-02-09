@@ -1,7 +1,7 @@
 import Layout from "../../components/Layout";
 import Link from "next/link";
 
-const NOTION_BLOG_ID = "1099525da7e5405c961706de56622ccd";
+const NOTION_BLOG_ID = "4e5c7cf91b0543ca83cd90388f3bd38d";
 
 export const getAllPosts = async () => {
   return await fetch(

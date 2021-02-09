@@ -1,3 +1,4 @@
+import Layout from "../../components/Layout";
 import { NotionRenderer } from "react-notion";
 
 import { getAllPosts } from "./";
@@ -20,16 +21,19 @@ export async function getStaticProps({ params: { slug } }) {
 }
 
 export default ({ post, blocks }) => (
-  <div style={{ maxWidth: 768 }}>
-    <h1>{post.title}</h1>
-    <NotionRenderer blockMap={blocks} />
-  </div>
+  <Layout>
+    <div style={{ maxWidth: 768 }}>
+      <h1>{post.title}</h1>
+      <NotionRenderer blockMap={blocks} />
+    </div>
+  </Layout>
 );
 
 export async function getStaticPaths() {
   const posts = await getAllPosts();
+  const paths = posts.map((row) => `/blog/${row.slug}`);
   return {
-    paths: posts.map((row) => `/blog/${row.slug}`),
-    fallback: true,
+    paths,
+    fallback: false,
   };
 }
