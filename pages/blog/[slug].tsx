@@ -1,7 +1,11 @@
+import Link from "next/link";
+
 import Layout from "../../components/Layout";
 import { NotionRenderer } from "react-notion";
 
 import { getAllPosts } from "./";
+
+import styles from "../../styles/SinglePost.module.css";
 
 export async function getStaticProps({ params: { slug } }) {
   // Get all posts again
@@ -20,11 +24,19 @@ export async function getStaticProps({ params: { slug } }) {
   };
 }
 
-export default ({ post, blocks }) => (
+const SinglePost = ({ post, blocks }) => (
   <Layout>
-    <div style={{ maxWidth: 768 }}>
-      <h1>{post.title}</h1>
-      <NotionRenderer blockMap={blocks} />
+    <div className={styles.container + " mx-auto"}>
+      <div style={{ maxWidth: 768 }}>
+        <div>
+          <Link href="/blog">Go back</Link>
+        </div>
+        <h1 className={styles.heading}>{post.title}</h1>
+        <NotionRenderer blockMap={blocks} />
+        <div className="pb-6">
+          <Link href="/blog">Go back</Link>
+        </div>
+      </div>
     </div>
   </Layout>
 );
@@ -37,3 +49,5 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+
+export default SinglePost;

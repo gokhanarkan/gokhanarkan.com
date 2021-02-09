@@ -30,6 +30,7 @@ a:hover {
   color: hsl(10, 80%, 50%);
   text-decoration: underline;
   transition: color 0.3s ease;
+  cursor: pointer;
 }
 
 .link:active,
