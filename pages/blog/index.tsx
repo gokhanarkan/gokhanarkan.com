@@ -1,7 +1,6 @@
-import Link from "next/link";
-
 import Layout from "../../components/Layout";
 import BasicMeta from "../../components/meta/BasicMeta";
+import Post from "../../components/Post";
 
 const NOTION_BLOG_ID = "4e5c7cf91b0543ca83cd90388f3bd38d";
 
@@ -14,10 +13,10 @@ export const getAllPosts = async () => {
 };
 
 export async function getStaticProps() {
-  const posts = await getAllPosts();
+  let posts = await getAllPosts();
   return {
     props: {
-      posts,
+      posts: posts.filter((post) => post.published),
     },
   };
 }
@@ -27,17 +26,24 @@ const Blog = ({ posts }) => {
     <Layout>
       <BasicMeta url={"/blog"} />
       <div className={styles.container + " mx-auto"}>
-        <div className="text-center mx-auto">
-          <h1 className={styles.heading}>Blog</h1>
-          <p>A blog about things, usually the side projects I've worked on.</p>
+        <div>
+          <h1 className={styles.heading + " text-center"}>Blog</h1>
+          <div className="font-normal text-center border-b-2">
+            <h2 className="mb-2">
+              A blog about things, usually the side projects I've worked on.
+            </h2>
+          </div>
           <div>
-            {posts.map((post) => (
-              <Link href="/blog/[slug]" as={`/blog/${post.slug}`}>
-                <div className="link">
-                  {post.title} | {post.date}
-                </div>
-              </Link>
-            ))}
+            <ul className="divide-y divide-gray-200 pb-10">
+              {posts.map((post) => (
+                <Post
+                  key={post.id}
+                  title={post.title}
+                  date={post.date}
+                  slug={post.slug}
+                />
+              ))}
+            </ul>
           </div>
         </div>
       </div>
