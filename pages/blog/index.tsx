@@ -18,7 +18,7 @@ export async function getStaticProps() {
   };
 }
 
-const index = ({posts}) => {
+export default function Blog({ posts }) {
   return (
     <Layout>
       <div>
@@ -30,6 +30,4 @@ const index = ({posts}) => {
       </div>
     </Layout>
   );
-};
-
-export default index;
+}
