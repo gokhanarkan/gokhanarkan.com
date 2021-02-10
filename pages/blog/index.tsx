@@ -29,12 +29,12 @@ const Blog = ({ posts }) => {
         <div>
           <h1 className={styles.heading + " text-center"}>Blog</h1>
           <div className="font-normal text-center border-b-2">
-            <h2 className="mb-2">
+            <h2 className="mb-4">
               A blog about things, usually the side projects I've worked on.
             </h2>
           </div>
           <div>
-            <ul className="divide-y divide-gray-200 pb-10">
+            <ul className="space-y-3 py-6">
               {posts.map((post) => (
                 <Post
                   key={post.id}

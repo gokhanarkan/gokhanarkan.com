@@ -3,6 +3,7 @@ import { NotionRenderer } from "react-notion";
 
 import Layout from "../../components/Layout";
 import BasicMeta from "../../components/meta/BasicMeta";
+import Back from "../../components/Back";
 
 import { getAllPosts } from "./";
 
@@ -31,14 +32,10 @@ const SinglePost = ({ post, blocks }) => {
       <BasicMeta url={`/blog/${post.slug}`} />
       <div className={styles.container + " mx-auto"}>
         <div className="post">
-          <div>
-            <Link href="/blog">Go back</Link>
-          </div>
+          <Back href="/blog" />
           <h1 className={styles.heading}>{post.title}</h1>
           <NotionRenderer blockMap={blocks} />
-          <div className="pb-6">
-            <Link href="/blog">Go back</Link>
-          </div>
+          <Back href="/blog" />
         </div>
       </div>
       <style jsx>
