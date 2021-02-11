@@ -69,11 +69,13 @@ export default function Navigation() {
             @media (min-width: 769px) {
               .container {
                 width: 7rem;
+                height: 1rem;
                 display: block;
               }
               ul {
                 opacity: 1;
                 width: 7rem;
+                height: 1rem;
                 top: auto;
                 display: block;
                 transform: translateY(0);

@@ -1,9 +1,18 @@
 import BasicMeta from "../components/meta/BasicMeta";
 import Layout from "../components/Layout";
+import Spotify from "../components/Spotify";
 
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
+export const getServerSideProps = async () => {
+  const res = await fetch(`${process.env.BASE_URL}/api/spotify/recently-played`);
+  const data = await res.json();
+  return {
+    props: { data: data.data },
+  };
+};
+
+export default function Home({ data }) {
   return (
     <Layout>
       <BasicMeta url={"/"} />
@@ -29,13 +38,16 @@ export default function Home() {
             <p className={styles.paragraph}>
               Although I am not actively using social media, please feel free to
               email me at&nbsp;
-              <a className="link" href="mailto:gokhan@hey.com">
+              <a
+                className="text-yellow-600 underline cursor-pointer hover:text-black transition-colors duration-500 ease-in-out"
+                href="mailto:gokhan@hey.com"
+              >
                 gokhan@hey.com
               </a>
               , if you have any enquiries. If you are unreasonable enough; you
               can&nbsp;
               <a
-                className="link"
+                className="text-yellow-600 underline cursor-pointer hover:text-black transition-colors duration-500 ease-in-out"
                 href="https://post.arkan.me"
                 target="_blank"
                 rel="noreferrer noopener"
@@ -44,7 +56,15 @@ export default function Home() {
               </a>
               , too.
             </p>
+            <p className={styles.paragraph + " mb-2"}>PS: Here is the last song I listened on Spotify.</p>
           </div>
+          <Spotify
+            album={data.album}
+            albumImageUrl={data.albumImageUrl}
+            artist={data.artist}
+            songUrl={data.songUrl}
+            title={data.title}
+          />
         </div>
       </div>
     </Layout>

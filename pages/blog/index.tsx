@@ -28,8 +28,8 @@ const Blog = ({ posts }) => {
       <div className={styles.container + " mx-auto"}>
         <div>
           <h1 className={styles.heading + " text-center"}>Blog</h1>
-          <div className="font-normal text-center border-b-2">
-            <h2 className="mb-4">
+          <div className="font-normal text-center">
+            <h2 className="mb-2">
               A blog about things, usually the side projects I've worked on.
             </h2>
           </div>
