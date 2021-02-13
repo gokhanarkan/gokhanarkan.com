@@ -5,7 +5,9 @@ import Spotify from "../components/Spotify";
 import styles from "../styles/Home.module.css";
 
 export const getServerSideProps = async () => {
-  const res = await fetch(`${process.env.BASE_URL}/api/spotify/recently-played`);
+  const res = await fetch(
+    `${process.env.BASE_URL}/api/spotify/recently-played`
+  );
   const data = await res.json();
   return {
     props: { data: data.data },
@@ -56,7 +58,9 @@ export default function Home({ data }) {
               </a>
               , too.
             </p>
-            <p className={styles.paragraph + " mb-2"}>PS: Here is the last song I listened on Spotify.</p>
+            <p className={styles.paragraph + " mb-2"}>
+              PS: Here is the last song I listened on Spotify.
+            </p>
           </div>
           <Spotify
             album={data.album}
