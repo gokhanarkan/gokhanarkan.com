@@ -9,6 +9,11 @@ body {
   color: #222;
   font-weight: 200;
   height: 100%;
+  @apply dark:bg-gray-500
+}
+
+p, h1, h2, h3, h4 {
+  @apply dark:text-white;
 }
 
 #__next {
@@ -24,4 +29,20 @@ a {
 a:active,
 a:hover {
   color: #000;
+}
+
+.notion-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.notion-list li {
+  margin: 0;
+  padding: 0;
+}
+
+.notion-list ul {
+  margin: 0;
+  padding: 0;
 }

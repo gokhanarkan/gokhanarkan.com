@@ -7,7 +7,7 @@ const Post = ({ title, date, slug }) => {
   const fullDate = `${month} ${dateObject.getDate()}, ${dateObject.getFullYear()}`;
 
   return (
-    <li className="bg-white shadow overflow-hidden px-4 py-4 sm:px-6 sm:rounded-md cursor-pointer hover:bg-gray-100">
+    <li className="bg-white shadow-sm overflow-hidden px-4 py-4 sm:px-6 sm:rounded-md cursor-pointer hover:bg-gray-100">
       <Link href="/blog/[slug]" as={`/blog/${slug}`}>
         <div className="flex space-x-3">
           <div className="flex-1 space-y-1">

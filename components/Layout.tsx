@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 import Head from "next/head";
 import Navigation from "./Navigation";
-import Footer from "./Footer";
 
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { useTheme } from "next-themes";
@@ -21,7 +20,6 @@ export default function Layout({ children }: Props) {
 
   const toggleDarkMode = (checked) => {
     const isDarkMode = checked;
-    console.log(resolvedTheme);
 
     if (isDarkMode) setTheme("dark");
     else setTheme("light");
@@ -44,12 +42,11 @@ export default function Layout({ children }: Props) {
           <DarkModeSwitch
             checked={isDarkMode}
             onChange={toggleDarkMode}
-            className="absolute top-0 right-0 mt-6 mr-6 md:mt-16 md:mr-16"
+            className="absolute top-0 right-0 z-50 mt-6 mr-8 md:mt-20 md:mr-20"
           />
         </nav>
         <main className={styles.main}>{children}</main>
       </div>
-      <Footer />
     </div>
   );
 }

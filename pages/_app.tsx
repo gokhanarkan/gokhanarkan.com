@@ -1,8 +1,17 @@
+import { ThemeProvider } from "next-themes";
+
 import "react-notion/src/styles.css";
-import '../styles/globals.css'
+import "../styles/globals.css";
+
+import "typeface-open-sans";
+import "typeface-merriweather";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <ThemeProvider defaultTheme="system" enableSystem={true} attribute="class">
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;

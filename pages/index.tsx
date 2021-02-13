@@ -21,9 +21,6 @@ export default function Home({ data }) {
       <div className={styles.container + " mx-auto"}>
         <div className="pb-6">
           <h1 className={styles.heading}>Gökhan Arkan.</h1>
-          <span className={styles.occupation}>
-            Software Engineer & Tea Lover
-          </span>
           <div className="mt-4">
             <p className={styles.paragraph}>
               I am a full-stack software engineer based in London, UK.

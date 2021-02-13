@@ -6,7 +6,7 @@ const SpotifyCard = ({ album, albumImageUrl, artist, songUrl, title }) => {
       target="_blank"
       rel="noreferrer noopener"
     >
-      <div className="inline-flex items-start border border-gray-200 dark:border-gray-800 rounded-lg w-72 mt-2 p-2 bg-white hover:bg-green-50 transition-colors duration-500 ease-in-out">
+      <div className="inline-flex items-start shadow border border-gray-200 rounded-lg w-72 mt-2 p-2 bg-white hover:bg-green-50 transition-colors duration-500 ease-in-out">
         <div className="inline-block max-w-full overflow-hidden relative box-border m-0 album-cover">
           <div className="box-border block max-w-full">
             <img
@@ -26,7 +26,7 @@ const SpotifyCard = ({ album, albumImageUrl, artist, songUrl, title }) => {
         </div>
         <div className="flex flex-col justify-center items-start ml-3">
           <p className="text-sm m-0 text-gray-600 mt-1 text-left">{artist}</p>
-          <p className="text-sm text-gray-800 dark:text-gray-300 max-w-48 truncate w-48 m-0 text-left">
+          <p className="text-sm text-gray-800 max-w-48 truncate w-48 m-0 text-left">
             {title}
           </p>
         </div>

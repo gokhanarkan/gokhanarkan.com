@@ -7,8 +7,6 @@ import Back from "../../components/Back";
 
 import { getAllPosts } from "./";
 
-import styles from "../../styles/SinglePost.module.css";
-
 export async function getStaticProps({ params: { slug } }) {
   // Get all posts again
   const posts = await getAllPosts();
@@ -30,26 +28,27 @@ const SinglePost = ({ post, blocks }) => {
   return (
     <Layout>
       <BasicMeta url={`/blog/${post.slug}`} />
-      <div className={styles.container + " mx-auto"}>
-        <div className="post">
-          <Back href="/blog" />
-          <h1 className={styles.heading}>{post.title}</h1>
-          <NotionRenderer blockMap={blocks} />
-          <Back href="/blog" />
+      <div className="container mx-auto">
+        <div className="relative py-16 bg-white overflow-hidden">
+          <div className="relative px-4 sm:px-6 lg:px-8">
+            <div className="text-lg max-w-prose mx-auto">
+              <Back href="/blog" />
+
+              <h1>
+                <span className="block text-base text-center text-yellow-600 font-semibold tracking-wide uppercase">
+                  {post.date}
+                </span>
+                <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                  {post.title}
+                </span>
+              </h1>
+            </div>
+            <div className="mt-6 prose prose-yellow prose-lg text-gray-500 mx-auto list-none">
+              <NotionRenderer blockMap={blocks} />
+            </div>
+          </div>
         </div>
       </div>
-      <style jsx>
-        {`
-          .post {
-            max-width: 768px;
-          }
-          @media (max-width: 769px) {
-            .post {
-              max-width: 18rem;
-            }
-          }
-        `}
-      </style>
     </Layout>
   );
 };
