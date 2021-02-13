@@ -9,7 +9,7 @@ body {
   color: #222;
   font-weight: 200;
   height: 100%;
-  @apply dark:bg-gray-500
+  @apply dark:bg-specialBlue;
 }
 
 p, h1, h2, h3, h4 {
@@ -21,14 +21,16 @@ p, h1, h2, h3, h4 {
 }
 
 a {
-  color: #9b9b9b;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  @apply font-medium text-yellow-600 cursor-pointer rounded-sm transition-colors duration-500 ease-in-out px-1 no-underline;
 }
 
 a:active,
 a:hover {
-  color: #000;
+  @apply text-specialBlue bg-yellow-200;
+}
+
+.link {
+  @apply underline;
 }
 
 .notion-list {

@@ -3,8 +3,9 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Navigation from "./Navigation";
 
-import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { useTheme } from "next-themes";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
+
 
 import styles from "../styles/Layout.module.css";
 
@@ -12,21 +13,31 @@ type Props = {
   children: React.ReactNode;
 };
 
-export default function Layout({ children }: Props) {
-  const { setTheme, resolvedTheme } = useTheme();
+const ThemeChanger = () => {
   const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => setMounted(true), []);
 
-  const toggleDarkMode = (checked) => {
-    const isDarkMode = checked;
+  let isDarkMode: boolean = resolvedTheme === "dark";
 
-    if (isDarkMode) setTheme("dark");
-    else setTheme("light");
+  const toggleDarkMode = (checked: boolean) => {
+    isDarkMode = checked;
+    isDarkMode ? setTheme("dark") : setTheme("light");
   };
 
-  const isDarkMode = resolvedTheme === "dark";
+  if (!mounted) return null;
 
+  return (
+    <DarkModeSwitch
+      checked={isDarkMode}
+      onChange={toggleDarkMode}
+      className="absolute top-0 right-0 z-50 mt-6 mr-8 md:mt-20 md:mr-20"
+    />
+  );
+}
+
+const Layout = ({ children }: Props) => {
   return (
     <div>
       <div className={styles.root}>
@@ -39,14 +50,12 @@ export default function Layout({ children }: Props) {
         </Head>
         <nav>
           <Navigation />
-          <DarkModeSwitch
-            checked={isDarkMode}
-            onChange={toggleDarkMode}
-            className="absolute top-0 right-0 z-50 mt-6 mr-8 md:mt-20 md:mr-20"
-          />
+          {ThemeChanger()}
         </nav>
         <main className={styles.main}>{children}</main>
       </div>
     </div>
   );
 }
+
+export default Layout;

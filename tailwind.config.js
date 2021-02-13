@@ -1,3 +1,5 @@
+const colors = require("tailwindcss/colors");
+
 const defaultSans = [
   "system-ui",
   "-apple-system",
@@ -30,6 +32,19 @@ module.exports = {
     fontFamily: {
       display: ["Open Sans", ...defaultSans],
       body: ["Merriweather", ...defaultSerif],
+    },
+    colors: {
+      specialBlue: "#222639",
+      gray: colors.coolGray,
+      red: colors.red,
+      yellow: colors.amber,
+      green: colors.emerald,
+      blue: colors.blue,
+      indigo: colors.indigo,
+      purple: colors.violet,
+      pink: colors.pink,
+      white: colors.white,
+      black: colors.black
     },
   },
   variants: {
