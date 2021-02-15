@@ -5,11 +5,13 @@
 html,
 body {
   font-family: "system-ui", sans-serif;
-  @apply bg-white;
   color: #222;
   font-weight: 200;
   height: 100%;
-  @apply dark:bg-specialBlue;
+}
+
+body {
+  @apply bg-white dark:bg-specialBlue;
 }
 
 p, h1, h2, h3, h4 {
@@ -47,4 +49,16 @@ a:hover {
 .notion-list ul {
   margin: 0;
   padding: 0;
+}
+
+.notion-text {
+  @apply font-normal;
+}
+
+.notion-quote {
+  @apply dark:text-white;
+}
+
+.notion-inline-code {
+  @apply dark:text-white dark:bg-yellow-500;
 }

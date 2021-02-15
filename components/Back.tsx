@@ -6,7 +6,9 @@ const Back = ({ href }) => {
       <Link href={href}>
         <button
           type="button"
-          className="inline-flex items-center px-3 py-2 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+          className="inline-flex items-center px-3 py-2 border border-transparent shadow-sm text-sm 
+            leading-4 font-medium rounded-md text-white bg-specialBlue hover:bg-gray-500 focus:outline-none 
+              focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 dark:border-specialBlue dark:bg-yellow-500"
         >
           <svg
             className="-ml-0.5 mr-2 h-4 w-4"

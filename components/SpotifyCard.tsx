@@ -2,7 +2,7 @@ const SpotifyCard = ({ album, albumImageUrl, artist, songUrl, title }) => {
   return (
     <a
       href={songUrl}
-      className="card-link"
+      className="card-link hover:bg-white dark:hover:bg-specialBlue"
       target="_blank"
       rel="noreferrer noopener"
     >
@@ -25,10 +25,10 @@ const SpotifyCard = ({ album, albumImageUrl, artist, songUrl, title }) => {
           />
         </div>
         <div className="flex flex-col justify-center items-start ml-3">
-          <p className="text-sm m-0 text-gray-600 mt-1 text-left dark:text-gray-800">
+          <p className="text-sm m-0 text-specialBlue mt-1 text-left dark:text-specialBlue">
             {artist}
           </p>
-          <p className="text-sm font-medium text-gray-800 max-w-48 truncate w-48 m-0 text-left dark:text-gray-800">
+          <p className="text-sm font-medium text-specialBlue max-w-48 truncate w-48 m-0 text-left dark:text-specialBlue">
             {title}
           </p>
         </div>

@@ -29,7 +29,7 @@ const SinglePost = ({ post, blocks }) => {
     <Layout>
       <BasicMeta url={`/blog/${post.slug}`} />
       <div className="container mx-auto">
-        <div className="relative py-16 bg-white overflow-hidden">
+        <div className="relative py-16 bg-white overflow-hidden dark:bg-specialBlue">
           <div className="relative px-4 sm:px-6 lg:px-8">
             <div className="text-lg max-w-prose mx-auto">
               <Back href="/blog" />
@@ -38,7 +38,7 @@ const SinglePost = ({ post, blocks }) => {
                 <span className="block text-base text-center text-yellow-600 font-semibold tracking-wide uppercase">
                   {post.date}
                 </span>
-                <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
                   {post.title}
                 </span>
               </h1>
