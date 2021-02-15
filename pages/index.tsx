@@ -38,9 +38,9 @@ export default function Home({ data }) {
               Although I am not actively using social media, please feel free to
               email me at&nbsp;
               <a className="link" href="mailto:gokhan@hey.com">
-                gokhan@hey.com
+                gokhan@hey.com,
               </a>
-              , if you have any enquiries. If you are unreasonable enough; you
+              if you have any enquiries. If you are unreasonable enough; you
               can&nbsp;
               <a
                 className="link"
@@ -48,9 +48,9 @@ export default function Home({ data }) {
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                send me a POST request
+                send me a POST request,
               </a>
-              , too.
+              too.
             </p>
             <p className={styles.paragraph + " mb-2"}>
               PS: Here is the last song I listened on Spotify.
