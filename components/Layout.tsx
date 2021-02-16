@@ -31,7 +31,7 @@ const ThemeChanger = () => {
     <DarkModeSwitch
       checked={isDarkMode}
       onChange={toggleDarkMode}
-      className="absolute top-0 right-0 z-1 mt-6 mr-8 md:mt-20 md:mr-20"
+      className="absolute top-0 right-0 z-10 mt-6 mr-8 md:mt-20 md:mr-20"
     />
   );
 };

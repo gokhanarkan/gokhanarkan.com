@@ -47,7 +47,7 @@ export default function Navigation() {
               display: flex;
               flex-direction: column;
               justify-content: center;
-              z-index: 1;
+              z-index: 20;
               transform: translateY(100%);
               transition: opacity 200ms;
             }

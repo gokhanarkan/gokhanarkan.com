@@ -75,3 +75,7 @@ a:hover {
 .notion-inline-code {
   @apply dark:text-white dark:bg-yellow-500;
 }
+
+.notion-code {
+  @apply dark:text-specialBlue dark:bg-white;
+}

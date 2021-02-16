@@ -4,6 +4,7 @@ import { NotionRenderer } from "react-notion";
 import Layout from "../../components/Layout";
 import BasicMeta from "../../components/meta/BasicMeta";
 import Back from "../../components/Back";
+import Newsletter from "../../components/Newsletter";
 
 import { getAllPosts } from "./";
 
@@ -47,6 +48,7 @@ const SinglePost = ({ post, blocks }) => {
               <NotionRenderer blockMap={blocks} />
             </div>
           </div>
+          <Newsletter />
         </div>
       </div>
     </Layout>
