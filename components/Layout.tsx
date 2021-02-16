@@ -6,7 +6,6 @@ import Navigation from "./Navigation";
 import { useTheme } from "next-themes";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 
-
 import styles from "../styles/Layout.module.css";
 
 type Props = {
@@ -32,10 +31,10 @@ const ThemeChanger = () => {
     <DarkModeSwitch
       checked={isDarkMode}
       onChange={toggleDarkMode}
-      className="absolute top-0 right-0 z-50 mt-6 mr-8 md:mt-20 md:mr-20"
+      className="absolute top-0 right-0 z-1 mt-6 mr-8 md:mt-20 md:mr-20"
     />
   );
-}
+};
 
 const Layout = ({ children }: Props) => {
   return (
@@ -56,6 +55,6 @@ const Layout = ({ children }: Props) => {
       </div>
     </div>
   );
-}
+};
 
 export default Layout;

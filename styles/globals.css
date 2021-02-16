@@ -14,7 +14,11 @@ body {
   @apply bg-white dark:bg-specialBlue;
 }
 
-p, h1, h2, h3, h4 {
+p,
+h1,
+h2,
+h3,
+h4 {
   @apply dark:text-white;
 }
 
@@ -35,6 +39,14 @@ a:hover {
   @apply underline;
 }
 
+.navigationList {
+  @apply bg-white dark:bg-specialBlue;
+}
+
+.meat {
+  @apply bg-specialBlue dark:bg-white;
+}
+
 .notion-list {
   list-style: none;
   margin: 0;
@@ -44,6 +56,7 @@ a:hover {
 .notion-list li {
   margin: 0;
   padding: 0;
+  @apply font-normal dark:text-white;
 }
 
 .notion-list ul {
