@@ -4,6 +4,7 @@ import { NotionRenderer } from "react-notion";
 import Layout from "../../components/Layout";
 import BasicMeta from "../../components/meta/BasicMeta";
 import Back from "../../components/Back";
+import PostNavigation from "../../components/PostNavigation";
 import Newsletter from "../../components/Newsletter";
 
 import { getAllPosts } from "./";
@@ -46,6 +47,7 @@ const SinglePost = ({ post, blocks }) => {
             </div>
             <div className="mt-6 prose prose-yellow prose-lg text-gray-500 mx-auto list-none">
               <NotionRenderer blockMap={blocks} />
+              <PostNavigation next={post.next} previous={post.previous} />
             </div>
           </div>
           <Newsletter />
