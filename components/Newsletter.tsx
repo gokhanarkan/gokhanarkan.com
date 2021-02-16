@@ -31,7 +31,7 @@ const Newsletter = () => {
                 Stay up-to-date
               </h2>
               <p className="mt-6 mx-auto max-w-2xl text-lg text-white font-normal">
-                Subscribe to my newsletter and stay-up-to-date.
+                Subscribe to my newsletter and stay up-to-date.
               </p>
             </div>
             <form action="#" className="mt-8 sm:mx-auto sm:max-w-lg sm:flex">
