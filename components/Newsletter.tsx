@@ -5,7 +5,7 @@ const Newsletter = () => {
   };
 
   const registerSubscriber = async (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Love this function over here
 
     // Check if the email is valid
     const email: string = event.target.email.value;
@@ -19,6 +19,7 @@ const Newsletter = () => {
       alert("Email is not valid.");
     }
 
+    // blog/tiny-contact-api
     const res = await fetch("https://post.arkan.me/subscription", {
       body: JSON.stringify({
         email: event.target.email.value,
@@ -40,6 +41,7 @@ const Newsletter = () => {
       alert(result.error);
     } else {
       alert(`${email} successfully saved.`);
+      event.target.email.value = "";
     }
   };
 
