@@ -33,6 +33,7 @@ const Newsletter = () => {
 
     if (result.duplicate) {
       alert(`${email} is duplicate.`);
+      return;
     }
 
     if (!result.success) {
