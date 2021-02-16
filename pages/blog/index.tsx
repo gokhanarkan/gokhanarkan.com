@@ -1,6 +1,8 @@
 import Layout from "../../components/Layout";
 import BasicMeta from "../../components/meta/BasicMeta";
+
 import Post from "../../components/Post";
+import Newsletter from "../../components/Newsletter";
 
 const NOTION_BLOG_ID = "4e5c7cf91b0543ca83cd90388f3bd38d";
 
@@ -45,6 +47,7 @@ const Blog = ({ posts }) => {
               ))}
             </ul>
           </div>
+          <Newsletter />
         </div>
       </div>
     </Layout>
