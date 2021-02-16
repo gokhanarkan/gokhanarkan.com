@@ -4,9 +4,7 @@ const Newsletter = () => {
     return re.test(email);
   };
 
-  const registerSubscriber = async (
-    event: React.FormEvent<HTMLInputElement>
-  ) => {
+  const registerSubscriber = async (event) => {
     event.preventDefault();
 
     // Check if the email is valid
