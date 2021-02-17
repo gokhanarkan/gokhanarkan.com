@@ -56,14 +56,15 @@ export default function Home({ data }) {
               PS: Here is the last song I listened on Spotify.
             </p>
           </div>
-          <Spotify
-            album={data.album}
-            albumImageUrl={data.albumImageUrl}
-            artist={data.artist}
-            songUrl={data.songUrl}
-            title={data.title}
-            position="right"
-          />
+          <div className="text-center sm:text-right">
+            <Spotify
+              album={data.album}
+              albumImageUrl={data.albumImageUrl}
+              artist={data.artist}
+              songUrl={data.songUrl}
+              title={data.title}
+            />
+          </div>
         </div>
       </div>
     </Layout>
