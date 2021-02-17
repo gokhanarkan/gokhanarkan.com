@@ -52,7 +52,7 @@ export default function Home({ data }) {
               </a>
               too.
             </p>
-            <p className={styles.paragraph + " mb-2"}>
+            <p className={styles.paragraph + " mb-2 text-right"}>
               PS: Here is the last song I listened on Spotify.
             </p>
           </div>
@@ -62,6 +62,7 @@ export default function Home({ data }) {
             artist={data.artist}
             songUrl={data.songUrl}
             title={data.title}
+            position="right"
           />
         </div>
       </div>

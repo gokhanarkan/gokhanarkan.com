@@ -1,8 +1,8 @@
 import SpotifyCard from "./SpotifyCard";
 
-const Spotify = ({ album, albumImageUrl, artist, songUrl, title }) => {
+const Spotify = ({ album, albumImageUrl, artist, songUrl, title, position }) => {
   return (
-    <div className="text-left">
+    <div className={"text-center sm:text-" + position}>
       <SpotifyCard
         album={album}
         albumImageUrl={albumImageUrl}

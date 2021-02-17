@@ -47,6 +47,9 @@ a:hover {
   @apply bg-specialBlue dark:bg-white;
 }
 
+/* NOTION properties,
+making them more robust and dark mode compatible */
+
 .notion-list {
   list-style: none;
   margin: 0;
@@ -83,3 +86,19 @@ a:hover {
 .notion-image-caption {
   @apply mt-6 !important;
 }
+
+.notion-asset-wrapper,
+.notion-image-inset {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.notion-image-inset {
+  @apply dark:bg-gray-300;
+}
+
+.notion-table {
+  @apply dark:bg-white text-specialBlue;
+}
+
+/* END Notion properties */
