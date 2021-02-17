@@ -79,3 +79,7 @@ a:hover {
 .notion-code {
   @apply dark:text-specialBlue dark:bg-white;
 }
+
+.notion-image-caption {
+  @apply mt-6 !important;
+}
