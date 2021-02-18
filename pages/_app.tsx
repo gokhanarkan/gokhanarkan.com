@@ -1,6 +1,7 @@
 import { ThemeProvider } from "next-themes";
 
 import "react-notion/src/styles.css";
+import "prismjs/themes/prism-tomorrow.css";
 import "../styles/globals.css";
 
 import "typeface-open-sans";
