@@ -77,7 +77,7 @@ const Newsletter = () => {
               Stay up-to-date
             </h2>
             <p className="mt-6 mx-auto max-w-2xl text-lg text-white font-normal">
-              Subscribe to my newsletter and stay up-to-date.
+              Subscribe to my newsletter and stay up-to-date. Why not? It's free.
             </p>
           </div>
           <form

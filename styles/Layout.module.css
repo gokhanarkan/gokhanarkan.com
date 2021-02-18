@@ -15,5 +15,6 @@
   }
   .main {
     flex: 1 0 auto;
+    margin-right: 2.5rem;
   }
 }
