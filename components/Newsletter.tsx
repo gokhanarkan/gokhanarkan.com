@@ -1,7 +1,7 @@
 const Newsletter = () => {
   const isValid = (email: string) => {
-    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
   };
 
   const registerSubscriber = async (event) => {
@@ -77,7 +77,8 @@ const Newsletter = () => {
               Stay up-to-date
             </h2>
             <p className="mt-6 mx-auto max-w-2xl text-lg text-white font-normal">
-              Subscribe to my newsletter and stay up-to-date. Why not? It's free.
+              Subscribe to my newsletter and stay up-to-date. Why not? It's
+              free.
             </p>
           </div>
           <form
