@@ -37,7 +37,6 @@ const ThemeChanger = () => {
 };
 
 const Layout = ({ children, ...pageProps }) => {
-  console.log(pageProps.index);
   return (
     <div>
       <div className={styles.root}>
