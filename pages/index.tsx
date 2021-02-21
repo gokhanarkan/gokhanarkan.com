@@ -16,7 +16,7 @@ export const getServerSideProps = async () => {
 
 export default function Home({ data }) {
   return (
-    <Layout>
+    <Layout index={true}>
       <BasicMeta url={"/"} />
       <div className={styles.container + " mx-auto"}>
         <div className="pb-6">

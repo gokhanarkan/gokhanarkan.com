@@ -36,7 +36,7 @@ const ThemeChanger = () => {
   );
 };
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children, ...pageProps }: Props) => {
   return (
     <div>
       <div className={styles.root}>
@@ -47,11 +47,13 @@ const Layout = ({ children }: Props) => {
           <link rel="apple-touch-icon" href="/icon.png" />
           <meta name="theme-color" content="#fff" />
         </Head>
-        <nav>
+        <nav className={pageProps.index ? "w-0" : null}>
           <Navigation />
           {ThemeChanger()}
         </nav>
-        <main className={styles.main}>{children}</main>
+        <main className={styles.main}>
+          {children}
+        </main>
       </div>
     </div>
   );

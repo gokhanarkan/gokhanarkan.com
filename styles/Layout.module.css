@@ -8,6 +8,10 @@
   display: flex;
   min-height: 100%;
 }
+.index {
+  display: flex;
+  min-height: 100%;
+}
 @media (min-width: 769px) {
   .root {
     display: flex;
@@ -15,5 +19,9 @@
   }
   .main {
     flex: 1 0 auto;
+  }
+  .index {
+    flex: 1 0 auto;
+    margin-right: 4rem;
   }
 }
