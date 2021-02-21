@@ -27,6 +27,7 @@ export async function getStaticProps({ params: { slug } }) {
 }
 
 const SinglePost = ({ post, blocks }) => {
+  const date = new Date(post.date).toDateString();
   return (
     <Layout>
       <BasicMeta url={`/blog/${post.slug}`} />
@@ -38,7 +39,7 @@ const SinglePost = ({ post, blocks }) => {
 
               <h1>
                 <span className="block text-base text-center text-yellow-600 font-semibold tracking-wide uppercase">
-                  {post.date}
+                  {date}
                 </span>
                 <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
                   {post.title}

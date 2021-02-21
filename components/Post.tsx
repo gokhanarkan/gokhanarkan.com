@@ -1,11 +1,7 @@
 import Link from "next/link";
 
 const Post = ({ title, date, slug }) => {
-  const dateObject = new Date(date);
-
-  const month = dateObject.toLocaleString("default", { month: "short" });
-  const fullDate = `${month} ${dateObject.getDate()}, ${dateObject.getFullYear()}`;
-
+  const fullDate = new Date(date).toDateString();
   return (
     <li
       className="bg-white shadow-sm overflow-hidden px-4 py-4 sm:px-6 rounded-md cursor-pointer hover:bg-gray-100 
