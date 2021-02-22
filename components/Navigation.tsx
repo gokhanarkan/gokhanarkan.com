@@ -86,6 +86,15 @@ export default function Navigation() {
                 padding: 0;
               }
             }
+            @media (min-width: 768px) and (max-width: 969px) {
+              li {
+                display: inline;
+                margin-left: 1rem;
+              }
+              ul {
+                margin-left: 1.5rem;
+              }
+            }
           `}
         </style>
       </div>
