@@ -1,9 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import Layout from "../components/Layout";
 
 import styles from "../styles/Home.module.css";
-
 
 export default function FourOhFour() {
   return (
@@ -15,11 +15,14 @@ export default function FourOhFour() {
             <p className={styles.paragraph + " mb-2"}>
               Don't worry, here is a kitty hugging a kitty!
             </p>
-            <img
-              src="https://media.tenor.com/images/7e97f887e0069d43d6740c88bfbc5b88/tenor.gif"
-              alt="Random cat picture"
-              className="pb-4 rounded-md mx-auto"
-            />
+            <div className="pb-2 rounded-md mx-auto">
+              <Image
+                src="/404.gif"
+                alt="Cat hugging another cat"
+                width={500}
+                height={400}
+              />
+            </div>
             <Link href="/">
               <a className="text-xl">Go back home</a>
             </Link>
