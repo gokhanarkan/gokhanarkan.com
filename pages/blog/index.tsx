@@ -4,13 +4,12 @@ import BasicMeta from "../../components/meta/BasicMeta";
 import Post from "../../components/Post";
 import Newsletter from "../../components/Newsletter";
 
-const NOTION_BLOG_ID = "4e5c7cf91b0543ca83cd90388f3bd38d";
-
 import styles from "../../styles/Blog.module.css";
+
 
 export const getAllPosts = async () => {
   return await fetch(
-    `https://notion-api.splitbee.io/v1/table/${NOTION_BLOG_ID}`
+    `https://notion-api.splitbee.io/v1/table/${process.env.NOTION_BLOG_ID}`
   ).then((res) => res.json());
 };
 
