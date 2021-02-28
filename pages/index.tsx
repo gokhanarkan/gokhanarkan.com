@@ -5,9 +5,12 @@ import Spotify from "../components/Spotify";
 import styles from "../styles/Home.module.css";
 
 export const getServerSideProps = async () => {
-  const res = await fetch(
-    `${process.env.BASE_URL}/api/spotify/recently-played`
-  );
+  // Trying the repl.it always on feature
+  const res = await(fetch(process.env.RECENTLY_PLAYED_REPL))
+  // Lambda where you can check out at gokhanarkan.com/api/spotify/recently-played
+  // const res = await fetch(
+  //   `${process.env.BASE_URL}/api/spotify/recently-played`
+  // );
   const data = await res.json();
   return {
     props: { data: data.data },
