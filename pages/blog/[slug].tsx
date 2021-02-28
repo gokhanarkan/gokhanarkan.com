@@ -11,7 +11,8 @@ import { getAllPosts } from "./";
 
 export async function getStaticProps({ params: { slug } }) {
   // Get all posts again
-  const posts = await getAllPosts();
+  let posts = await getAllPosts();
+  posts = posts.filter((post) => post.published)
   // Find the current blogpost by slug
   const post = posts.find((t) => t.slug === slug);
   const blocks = await fetch(
