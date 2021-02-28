@@ -60,7 +60,8 @@ const SinglePost = ({ post, blocks }) => {
 };
 
 export async function getStaticPaths() {
-  const posts = await getAllPosts();
+  let posts = await getAllPosts();
+  posts = posts.filter((post) => post.published)
   const paths = posts.map((row) => `/blog/${row.slug}`);
   return {
     paths,
