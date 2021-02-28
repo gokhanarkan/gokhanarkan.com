@@ -11,17 +11,21 @@ const SpotifyCard = ({ album, albumImageUrl, artist, songUrl, title }) => {
           <div className="box-border block max-w-full">
             <img
               className="max-w-full block"
-              alt=""
+              alt="Spotify Logo"
+              height={60}
+              width={60}
               aria-hidden="true"
               role="presentation"
               src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
             />
           </div>
           <img
-            alt="Spotify"
+            alt="Album Image"
             src={albumImageUrl}
+            width={240}
+            height={240}
             decoding="async"
-            className="rounded-lg w-60 h-60 p-0 visible absolute inset-0 box-border border-none m-auto block min-w-full max-w-full min-h-full max-h-full"
+            className="rounded-lg p-0 visible absolute inset-0 box-border border-none m-auto block min-w-full max-w-full min-h-full max-h-full"
           />
         </div>
         <div className="flex flex-col justify-center items-start ml-3">
