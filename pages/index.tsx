@@ -45,12 +45,12 @@ export default function Home({ data }) {
             </p>
             <p className={styles.paragraph}>
               Although I am not actively using social media, please feel free to
-              email me at&nbsp;
+              email me at{" "}
               <a className="link" href="mailto:gokhan@hey.com">
                 gokhan@hey.com,
               </a>
               if you have any enquiries. If you are unreasonable enough; you
-              can&nbsp;
+              can{" "}
               <a
                 className="link"
                 href="https://post.arkan.me"
