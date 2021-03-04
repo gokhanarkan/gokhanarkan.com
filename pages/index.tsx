@@ -5,16 +5,22 @@ import Spotify from "../components/Spotify";
 import styles from "../styles/Home.module.css";
 
 export const getServerSideProps = async () => {
-  // Trying the repl.it always on feature
-  const res = await(fetch(process.env.RECENTLY_PLAYED_REPL))
-  // Lambda where you can check out at gokhanarkan.com/api/spotify/recently-played
-  // const res = await fetch(
-  //   `${process.env.BASE_URL}/api/spotify/recently-played`
-  // );
-  const data = await res.json();
-  return {
-    props: { data: data.data },
-  };
+  try {
+    // Trying the repl.it always on feature
+    const res = await fetch(process.env.RECENTLY_PLAYED_REPL);
+    // Lambda where you can check out at gokhanarkan.com/api/spotify/recently-played
+    // const res = await fetch(
+    //   `${process.env.BASE_URL}/api/spotify/recently-played`
+    // );
+    const data = await res.json();
+    return {
+      props: { data: data.data },
+    };
+  } catch (e) {
+    return {
+      props: { data: null },
+    };
+  }
 };
 
 export default function Home({ data }) {
@@ -55,19 +61,23 @@ export default function Home({ data }) {
               </a>
               too.
             </p>
-            <p className={styles.paragraph + " mb-2 text-right"}>
-              PS: Here is the last song I listened on Spotify.
-            </p>
           </div>
-          <div className="text-center sm:text-right">
-            <Spotify
-              album={data.album}
-              albumImageUrl={data.albumImageUrl}
-              artist={data.artist}
-              songUrl={data.songUrl}
-              title={data.title}
-            />
-          </div>
+          {data ? (
+            <div>
+              <p className={styles.paragraph + " mb-2 text-right"}>
+                PS: Here is the last song I listened on Spotify.
+              </p>
+              <div className="text-center sm:text-right">
+                <Spotify
+                  album={data.album}
+                  albumImageUrl={data.albumImageUrl}
+                  artist={data.artist}
+                  songUrl={data.songUrl}
+                  title={data.title}
+                />
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
     </Layout>
