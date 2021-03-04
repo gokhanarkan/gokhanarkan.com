@@ -34,17 +34,17 @@ const Blog = ({ posts }) => {
               A blog about things, usually the side projects I've worked on.
             </h2>
           </div>
-          <div>
-            <ul className="space-y-3 py-6">
-              {posts.map((post) => (
-                <Post
-                  key={post.id}
-                  title={post.title}
-                  date={post.date}
-                  slug={post.slug}
-                />
-              ))}
-            </ul>
+          <div className="space-y-3 my-6">
+            {posts.map((post) => (
+              <Post
+                key={post.id}
+                title={post.title}
+                date={post.date}
+                slug={post.slug}
+                preview={post.preview}
+                url="blog"
+              />
+            ))}
           </div>
           <Newsletter />
         </div>

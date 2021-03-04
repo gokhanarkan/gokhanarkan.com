@@ -1,7 +1,7 @@
 import Layout from "../../components/Layout";
 import BasicMeta from "../../components/meta/BasicMeta";
 
-import Thought from "../../components/Thought";
+import Post from "../../components/Post";
 
 import styles from "../../styles/Blog.module.css";
 
@@ -30,14 +30,15 @@ const Thoughts = ({ posts }) => {
           <div className="font-normal text-center">
             <h2 className="mb-2">Fresh thoughts, straight from the shower.</h2>
           </div>
-          <div>
+          <div className="space-y-3 my-6">
             {posts.map((post) => (
-              <Thought
+              <Post
                 key={post.id}
                 title={post.title}
                 date={post.date}
                 slug={post.slug}
                 preview={post.preview}
+                url="thoughts"
               />
             ))}
           </div>

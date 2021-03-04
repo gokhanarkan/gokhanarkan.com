@@ -1,23 +1,21 @@
 import Link from "next/link";
 
-const Post = ({ title, date, slug }) => {
-  const fullDate = new Date(date).toDateString();
+const Post = ({ title, date, slug, preview, url }) => {
   return (
-    <li
-      className="bg-white shadow-sm overflow-hidden px-4 py-4 sm:px-6 rounded-md cursor-pointer hover:bg-gray-100 
+    <Link href={`/${url}/[slug]`} as={`/${url}/${slug}`}>
+      <div
+        className="my-4 overflow-hidden px-2 py-4 sm:px-6 rounded-sm cursor-pointer hover:bg-gray-100 
         dark:bg-specialBlue dark:hover:bg-yellow-500"
-    >
-      <Link href="/blog/[slug]" as={`/blog/${slug}`}>
-        <div className="flex space-x-3">
-          <div className="flex-1 space-y-1">
-            <div className="flex items-center justify-between">
-              <h3 className="text-sm font-semibold">{title}</h3>
-            </div>
-            <p className="text-sm font-normal text-gray-500">{fullDate}</p>
-          </div>
+      >
+        <p className="text-sm font-medium text-gray-500">
+          <time dateTime={date}>{new Date(date).toDateString()}</time>
+        </p>
+        <div className="mt-1">
+          <p className="text-xl font-semibold text-gray-900">{title}</p>
+          <p className="mt-1 text-base text-gray-900">{preview}</p>
         </div>
-      </Link>
-    </li>
+      </div>
+    </Link>
   );
 };
 
