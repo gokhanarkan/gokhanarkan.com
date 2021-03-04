@@ -28,21 +28,18 @@ const Thoughts = ({ posts }) => {
         <div>
           <h1 className={styles.heading + " text-center"}>Thoughts</h1>
           <div className="font-normal text-center">
-            <h2 className="mb-2">
-              Fresh thoughts, straight from the shower.
-            </h2>
+            <h2 className="mb-2">Fresh thoughts, straight from the shower.</h2>
           </div>
           <div>
-            <ul className="space-y-3 py-6">
-              {posts.map((post) => (
-                <Thought
-                  key={post.id}
-                  title={post.title}
-                  date={post.date}
-                  slug={post.slug}
-                />
-              ))}
-            </ul>
+            {posts.map((post) => (
+              <Thought
+                key={post.id}
+                title={post.title}
+                date={post.date}
+                slug={post.slug}
+                preview={post.preview}
+              />
+            ))}
           </div>
         </div>
       </div>

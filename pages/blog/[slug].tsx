@@ -30,9 +30,9 @@ export async function getStaticProps({ params: { slug } }) {
 const SinglePost = ({ post, blocks }) => {
   const date = new Date(post.date).toDateString();
   return (
-    <Layout>
+    <Layout index={true}>
       <BasicMeta url={`/blog/${post.slug}`} />
-      <div className="container mx-auto lg:pr-16">
+      <div className="container mx-auto">
         <div className="relative py-16 bg-white overflow-hidden dark:bg-specialBlue">
           <div className="relative px-4 sm:px-6 lg:px-8">
             <div className="text-lg max-w-prose mx-auto">
