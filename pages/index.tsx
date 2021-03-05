@@ -49,8 +49,7 @@ export default function Home({ data }) {
               <a className="link" href="mailto:gokhan@hey.com">
                 gokhan@hey.com,
               </a>
-              if you have any enquiries. If you are unreasonable enough; you
-              can{" "}
+              if you have any enquiries. If you are unreasonable enough; you can{" "}
               <a
                 className="link"
                 href="https://post.arkan.me"
@@ -63,20 +62,13 @@ export default function Home({ data }) {
             </p>
           </div>
           {data ? (
-            <div>
-              <p className={styles.paragraph + " mb-2 text-right"}>
-                PS: Here is the last song I listened on Spotify.
-              </p>
-              <div className="text-center sm:text-right">
-                <Spotify
-                  album={data.album}
-                  albumImageUrl={data.albumImageUrl}
-                  artist={data.artist}
-                  songUrl={data.songUrl}
-                  title={data.title}
-                />
-              </div>
-            </div>
+            <Spotify
+              album={data.album}
+              albumImageUrl={data.albumImageUrl}
+              artist={data.artist}
+              songUrl={data.songUrl}
+              title={data.title}
+            />
           ) : null}
         </div>
       </div>

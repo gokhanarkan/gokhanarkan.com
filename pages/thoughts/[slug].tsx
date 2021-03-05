@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { NotionRenderer } from "react-notion";
 
 import Layout from "../../components/Layout";
