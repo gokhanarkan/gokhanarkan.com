@@ -53,6 +53,7 @@ const Newsletter = () => {
       setMsg(result.error);
     } else {
       event.target.email.value = "";
+      setError(false);
       setMsg(`${email} successfully saved.`);
     }
   };
