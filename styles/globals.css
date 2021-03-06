@@ -84,13 +84,12 @@ making them more robust and dark mode compatible */
 }
 
 .notion-image-caption {
-  @apply mt-6 !important;
+  @apply mt-2 text-center font-normal text-black dark:text-white !important;
 }
 
 .notion-asset-wrapper,
 .notion-image-inset {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
+  @apply py-0 my-0 !important;
 }
 
 .notion-image-inset {

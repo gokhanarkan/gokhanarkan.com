@@ -1,22 +1,32 @@
+import { useState } from "react";
+
 const Newsletter = () => {
+  const [msg, setMsg] = useState("");
+  const [error, setError] = useState(false);
+
   const isValid = (email: string) => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   };
 
   const registerSubscriber = async (event) => {
-    event.preventDefault(); // Love this function over here
+    // Love this function over here
+    event.preventDefault();
 
     // Check if the email is valid
     const email: string = event.target.email.value;
     const validEmail: boolean = isValid(email);
 
     if (email === "") {
+      setError(true);
+      setMsg("Please add the email.");
       return;
     }
 
     if (!validEmail) {
-      alert("Email is not valid.");
+      setError(true);
+      setMsg("Email is not valid.");
+      return;
     }
 
     // blog/tiny-contact-api
@@ -33,15 +43,17 @@ const Newsletter = () => {
     const result = await res.json();
 
     if (result.duplicate) {
-      alert(`${email} is duplicate.`);
+      setError(true);
+      setMsg(`${email} is duplicate.`);
       return;
     }
 
     if (!result.success) {
-      alert(result.error);
+      setError(true);
+      setMsg(result.error);
     } else {
-      alert(`${email} successfully saved.`);
       event.target.email.value = "";
+      setMsg(`${email} successfully saved.`);
     }
   };
 
@@ -111,6 +123,19 @@ const Newsletter = () => {
               </button>
             </div>
           </form>
+          {msg ? (
+            <div className="flex">
+              <p
+                className={
+                  "mx-auto text-left mt-1 " +
+                  (error ? "text-red-500" : "text-green-500") +
+                  " font-semibold"
+                }
+              >
+                {msg}
+              </p>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
