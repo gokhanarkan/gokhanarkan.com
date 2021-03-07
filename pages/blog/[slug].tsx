@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { NotionRenderer } from "react-notion";
+import Prism from 'prismjs';
 
 import Layout from "../../components/Layout";
 import BasicMeta from "../../components/meta/BasicMeta";
@@ -27,7 +29,9 @@ export async function getStaticProps({ params: { slug } }) {
 }
 
 const SinglePost = ({ post, blocks }) => {
-  const date = new Date(post.date).toDateString();
+  useEffect(() => {
+    Prism.highlightAll();
+  })
   return (
     <Layout index={true}>
       <BasicMeta url={`/blog/${post.slug}`} />
@@ -39,14 +43,14 @@ const SinglePost = ({ post, blocks }) => {
 
               <h1>
                 <span className="block text-base text-center text-yellow-600 font-semibold tracking-wide uppercase">
-                  {date}
+                  {new Date(post.date).toDateString()}
                 </span>
                 <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
                   {post.title}
                 </span>
               </h1>
             </div>
-            <div className="mt-6 prose prose-yellow prose-lg text-gray-500 mx-auto list-none">
+            <div className="mt-6 prose prose-yellow prose-lg text-gray-500 mx-auto list-none line-numbers match-braces">
               <NotionRenderer blockMap={blocks} />
               <PostNavigation next={post.next} previous={post.previous} />
             </div>

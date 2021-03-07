@@ -1,0 +1,14 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "prismjs",
+      {
+        "languages": ["javascript", "css", "markup", "python", "go", "ruby"],
+        "plugins": ["line-numbers", "autoloader", "autolinker", "copy-to-clipboard", "show-language", "match-braces"],
+        "theme": "tomorrow",
+        "css": true
+      }
+    ]
+  ]
+}

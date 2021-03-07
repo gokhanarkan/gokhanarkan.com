@@ -19,7 +19,7 @@ const Newsletter = () => {
 
     if (email === "") {
       setError(true);
-      setMsg("Please add the email.");
+      setMsg("Please type your email.");
       return;
     }
 
@@ -129,7 +129,9 @@ const Newsletter = () => {
               <p
                 className={
                   "mx-auto text-left mt-1 " +
-                  (error ? "text-red-500" : "text-green-500") +
+                  (error
+                    ? "text-red-500"
+                    : "text-green-500") +
                   " font-semibold"
                 }
               >
