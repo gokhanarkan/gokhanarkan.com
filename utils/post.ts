@@ -5,4 +5,6 @@ export type NotionPost = {
   published: boolean;
   preview: string;
   title: string;
+  previous: string;
+  next: string;
 };

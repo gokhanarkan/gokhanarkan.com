@@ -3,9 +3,9 @@ import Newsletter from "./Newsletter";
 
 import { NotionPost } from "../utils/post";
 
-import styles from "../styles/PostView.module.css";
+import styles from "../styles/PostMenu.module.css";
 
-const PostView = ({ title, description, posts, newsletter }) => {
+const PostMenu = ({ title, description, posts, newsletter }) => {
   return (
     <div className={styles.container + " mx-auto"}>
       <div>
@@ -33,4 +33,4 @@ const PostView = ({ title, description, posts, newsletter }) => {
   );
 };
 
-export default PostView;
+export default PostMenu;
