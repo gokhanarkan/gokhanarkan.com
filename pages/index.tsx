@@ -2,28 +2,50 @@ import BasicMeta from "../components/meta/BasicMeta";
 import Layout from "../components/Layout";
 import Spotify from "../components/Spotify";
 
+import fetch from "../lib/fetch";
+import useSWR from "swr";
+
 import styles from "../styles/Home.module.css";
 
-export const getServerSideProps = async () => {
-  try {
-    // Trying the repl.it always on feature
-    const res = await fetch(process.env.RECENTLY_PLAYED_REPL);
-    // Lambda where you can check out at gokhanarkan.com/api/spotify/recently-played
-    // const res = await fetch(
-    //   `${process.env.BASE_URL}/api/spotify/recently-played`
-    // );
-    const data = await res.json();
-    return {
-      props: { data: data.data },
-    };
-  } catch (e) {
-    return {
-      props: { data: null },
-    };
-  }
+// export const getServerSideProps = async () => {
+//   try {
+//     // Trying the repl.it always on feature
+//     const res = await fetch(process.env.RECENTLY_PLAYED_REPL);
+//     // Lambda where you can check out at gokhanarkan.com/api/spotify/recently-played
+//     // const res = await fetch(
+//     //   `${process.env.BASE_URL}/api/spotify/recently-played`
+//     // );
+//     const data = await res.json();
+//     return {
+//       props: { data: data.data },
+//     };
+//   } catch (e) {
+//     return {
+//       props: { data: null },
+//     };
+//   }
+// };
+
+const SpotifyData = () => {
+  const { data, error } = useSWR<string[]>(
+    "/api/spotify/recently-played",
+    fetch
+  );
+
+  console.log(data);
+
+  return data ? (
+    <Spotify
+      album={data.album}
+      albumImageUrl={data.albumImageUrl}
+      artist={data.artist}
+      songUrl={data.songUrl}
+      title={data.title}
+    />
+  ) : null;
 };
 
-export default function Home({ data }) {
+function Home() {
   return (
     <Layout index={true}>
       <BasicMeta url={"/"} />
@@ -61,17 +83,11 @@ export default function Home({ data }) {
               too.
             </p>
           </div>
-          {data ? (
-            <Spotify
-              album={data.album}
-              albumImageUrl={data.albumImageUrl}
-              artist={data.artist}
-              songUrl={data.songUrl}
-              title={data.title}
-            />
-          ) : null}
+          {SpotifyData()}
         </div>
       </div>
     </Layout>
   );
 }
+
+export default Home;
