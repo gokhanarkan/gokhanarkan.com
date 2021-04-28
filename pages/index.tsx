@@ -7,45 +7,17 @@ import useSWR from "swr";
 
 import styles from "../styles/Home.module.css";
 
-// export const getServerSideProps = async () => {
-//   try {
-//     // Trying the repl.it always on feature
-//     const res = await fetch(process.env.RECENTLY_PLAYED_REPL);
-//     // Lambda where you can check out at gokhanarkan.com/api/spotify/recently-played
-//     // const res = await fetch(
-//     //   `${process.env.BASE_URL}/api/spotify/recently-played`
-//     // );
-//     const data = await res.json();
-//     return {
-//       props: { data: data.data },
-//     };
-//   } catch (e) {
-//     return {
-//       props: { data: null },
-//     };
-//   }
-// };
-
-const SpotifyData = () => {
-  const { data, error } = useSWR<string[]>(
-    "/api/spotify/recently-played",
-    fetch
-  );
-
-  console.log(data);
-
-  return data ? (
-    <Spotify
-      album={data.album}
-      albumImageUrl={data.albumImageUrl}
-      artist={data.artist}
-      songUrl={data.songUrl}
-      title={data.title}
-    />
-  ) : null;
-};
-
-function Home() {
+export default function Home() {
+  const { data } = useSWR<{
+    success: boolean;
+    data: {
+      album: string;
+      albumImageUrl: string;
+      artist: string;
+      songUrl: string;
+      title: string;
+    };
+  }>("/api/spotify/recently-played", fetch);
   return (
     <Layout index={true}>
       <BasicMeta url={"/"} />
@@ -83,11 +55,17 @@ function Home() {
               too.
             </p>
           </div>
-          {SpotifyData()}
+          {data ? (
+            <Spotify
+              album={data.data.album}
+              albumImageUrl={data.data.albumImageUrl}
+              artist={data.data.artist}
+              songUrl={data.data.songUrl}
+              title={data.data.title}
+            />
+          ) : null}
         </div>
       </div>
     </Layout>
   );
 }
-
-export default Home;
