@@ -41,7 +41,7 @@ export default function Home() {
               Although I am not actively using social media, please feel free to
               email me at{" "}
               <a className="link" href="mailto:gokhan@hey.com">
-                gokhan@hey.com,
+                gokhan@hey.com
               </a>
               if you have any enquiries. If you are unreasonable enough; you can{" "}
               <a
@@ -50,7 +50,7 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                send me a POST request,
+                send me a POST request
               </a>
               too.
             </p>
