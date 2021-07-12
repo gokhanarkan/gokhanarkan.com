@@ -26,11 +26,8 @@ export default function Home() {
           <h1 className={styles.heading}>Gökhan Arkan.</h1>
           <div className="mt-4">
             <p className={styles.paragraph}>
-              I am a full-stack software engineer based in London, UK.
-            </p>
-            <p className={styles.paragraph}>
-              I work in fintech and studying part-time towards my Master's
-              degree at the University of Oxford.
+              I am a full-stack software engineer based in London, and I study
+              part-time towards my Master's degree at the University of Oxford.
             </p>
             <p className={styles.paragraph}>
               I like video-games, listening or creating music, cycling, and
