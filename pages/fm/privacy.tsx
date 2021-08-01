@@ -1,13 +1,12 @@
 import BasicMeta from "../../components/meta/BasicMeta";
 import Layout from "../../components/Layout";
-import Spotify from "../..PostNavigation/components/Spotify";
 
 import styles from "../../styles/Home.module.css";
 
 export default function Home() {
   return (
     <Layout index={true}>
-      <BasicMeta url={"/"} />
+      <BasicMeta url={"/fm/privacy"} />
       <div className={styles.container + " mx-auto"}>
         <div className="pb-6">
           <h1 className={styles.heading}>Fart Machine Privacy Policy</h1>
