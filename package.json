@@ -14,6 +14,7 @@
     "axios": "^0.21.1",
     "babel-plugin-prismjs": "^2.0.1",
     "cheerio": "^1.0.0-rc.5",
+    "ioredis": "^4.27.9",
     "isomorphic-unfetch": "^3.1.0",
     "next": "10.0.6",
     "next-themes": "^0.0.10",
