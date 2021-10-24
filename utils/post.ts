@@ -7,4 +7,5 @@ export type NotionPost = {
   title: string;
   previous: string;
   next: string;
+  app: string;
 };

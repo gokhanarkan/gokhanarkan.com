@@ -5,6 +5,7 @@ import Prism from "prismjs";
 import Back from "./Back";
 import PostNavigation from "./PostNavigation";
 import Newsletter from "./Newsletter";
+import NumberChecker from "./NumberChecker";
 
 const PostView = ({ post, blocks, path, detailed }) => {
   if (detailed) {
@@ -27,6 +28,7 @@ const PostView = ({ post, blocks, path, detailed }) => {
                 {post.title}
               </span>
             </h1>
+            {post.app === "NumberChecker" && <NumberChecker />}
           </div>
           <div className="mt-6 prose prose-yellow prose-lg text-gray-500 mx-auto list-none line-numbers match-braces">
             <NotionRenderer blockMap={blocks} />

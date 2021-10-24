@@ -3,6 +3,8 @@ import { redis } from "../../../lib/redis";
 
 const sanitizeNumber = (num: string) => {
   if (num.startsWith("+")) num = num.substring(3);
+  if (num.startsWith("44")) num = num.substring(2);
+  if (!num.startsWith("0")) num = "0" + num;
   num = num.replace(/[^0-9]/g, "");
   if (!Boolean(num)) return false;
   return num;
