@@ -6,27 +6,22 @@ import "../styles/globals.css";
 import "typeface-open-sans";
 import "typeface-merriweather";
 
-import { useEffect } from "react";
 import { AppProps } from "next/app";
-import { useRouter } from "next/router";
-import * as gtag from "../utils/gtag";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-
-  useEffect(() => {
-    const handleRouteChange = (url: URL) => {
-      gtag.pageview(url);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
-
   return (
     <ThemeProvider defaultTheme="system" enableSystem={true} attribute="class">
       <Component {...pageProps} />
+      <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
+      <noscript>
+        {/* eslint-disable @next/next/no-img-element */}
+        <img
+          src="https://queue.simpleanalyticscdn.com/noscript.gif"
+          alt=""
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </noscript>
     </ThemeProvider>
   );
 }
