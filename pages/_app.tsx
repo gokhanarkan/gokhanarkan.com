@@ -13,11 +13,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider defaultTheme="system" enableSystem={true} attribute="class">
       <Component {...pageProps} />
-      <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
+      <Script src="https://sa.gokhanarkan.com/latest.js" />
       <noscript>
         {/* eslint-disable @next/next/no-img-element */}
         <img
-          src="https://queue.simpleanalyticscdn.com/noscript.gif"
+          src="https://sa.gokhanarkan.com/noscript.gif"
           alt=""
           referrerPolicy="no-referrer-when-downgrade"
         />
