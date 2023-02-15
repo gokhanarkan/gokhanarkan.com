@@ -27,7 +27,11 @@ export async function getStaticProps({ params: { slug } }) {
 const SinglePost = ({ post, blocks }) => {
   return (
     <Layout index={true}>
-      <BasicMeta url={`/blog/${post.slug}`} />
+      <BasicMeta
+        url={`/blog/${post.slug}`}
+        title={post.title}
+        description={post.preview}
+      />
       <PostView post={post} blocks={blocks} path="/blog" detailed={true} />
     </Layout>
   );

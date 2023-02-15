@@ -11,9 +11,9 @@ const Post = ({ title, date, slug, preview, url }) => {
       </p>
       <div className="mt-1">
         <Link href={`/${url}/[slug]`} as={`/${url}/${slug}`}>
-          <p className="text-xl font-semibold cursor-pointer text-gray-900 hover:text-yellow-500">
+          <a className="text-xl font-semibold cursor-pointer text-gray-900">
             {title}
-          </p>
+          </a>
         </Link>
         <p className="mt-1 text-base text-gray-900">{preview}</p>
       </div>

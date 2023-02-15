@@ -21,12 +21,15 @@ export async function getStaticProps() {
 }
 
 const Blog = ({ posts }) => {
+  const title = "Blog";
+  const description =
+    "A blog about things, usually the side projects I've worked on.";
   return (
     <Layout>
-      <BasicMeta url={"/blog"} />
+      <BasicMeta url={"/blog"} title={title} description={description} />
       <PostMenu
-        title="Blog"
-        description="A blog about things, usually the side projects I've worked on."
+        title={title}
+        description={description}
         posts={posts}
         newsletter={true}
       />
