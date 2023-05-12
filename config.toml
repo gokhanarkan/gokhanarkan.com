@@ -7,25 +7,10 @@ pygmentsCodeFences = true
 pygmentsUseClasses = true
 
 [params]
-  description = "Your site description"
-  copyright = "Have a good day!"
+  description = "Personal landing page of Gökhan Arkan"
+  copyright = "Have a great day!"
   dark = "auto"
   highlight = true
-
-[menu]
-  [[menu.main]]
-    identifier = "posts"
-    name = "posts"
-    title = "posts"
-    url = "/"
-    weight = 10
-
-  [[menu.main]]
-    identifier = "about"
-    name = "about"
-    title = "about"
-    url = "/about/"
-    weight = 20
 
 [permalinks]
   posts = "/:title/"
