@@ -2,17 +2,13 @@
 title: "Gökhan Arkan"
 ---
 
-I am a software engineer based in London, UK. 🇬🇧
+I am a software engineer based in London, UK 🇬🇧, originally from Istanbul, Türkiye 🇹🇷.
 
-I am originally from Istanbul, Türkiye. 🇹🇷
+I am working as one of the founding engineers for a company called [Surfe](https://www.surfe.com) since 2021 which is based in Paris, France 🇫🇷.
 
-I am working for a company called [Surfe](https://www.surfe.com) as one of the founding engineers since 2021 which is based in Paris, France. 🇫🇷
+Aside from my work, I also study part-time towards my Master's degree at the [University of Oxford](https://www.ox.ac.uk/) 🇬🇧.
 
-I also study part-time towards my Master's degree at the University of Oxford. 🇬🇧
-
-I like programming, video-games, cycling, tennis, and
-photography. In fact, I'll be glad to accept invitations as a
-volunteer photographer for charity/community.
+My interests include programming, video-games, cycling, and tennis. I am also a passionate photography enthusiast and would gladly accept invitations to volunteer as a photographer for charitable organizations.
 
 Although I am not actively using social media, please feel free to
 email me at [gokhan@hey.com](mailto:gokhan@hey.com) if you have any enquiries.
