@@ -5,6 +5,7 @@ languageCode = "en-gb"
 enableInlineShortcodes = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
+googleAnalytics = "G-HGPEC8YVRQ"
 
 [params]
   description = "Personal landing page of Gökhan Arkan"
