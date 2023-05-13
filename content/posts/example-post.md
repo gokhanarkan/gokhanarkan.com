@@ -8,7 +8,7 @@ tags = [
 ]
 +++
 
-This post was written with ChatGPT-3.5 with 0.7 temperature.
+This post was written by ChatGPT-3.5 with 0.7 temperature for example purposes.
 
 So, as you know, I maintain a personal website to showcase my work and share my thoughts with the world. For many years, I used Next.js to power my landing page gokhanarkan.com. However, recently I made the switch to Hugo and I want to share with you why I made this decision.
 
