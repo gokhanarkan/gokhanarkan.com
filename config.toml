@@ -14,7 +14,7 @@ googleAnalytics = "G-HGPEC8YVRQ"
   highlight = true
 
 [permalinks]
-  posts = "/:title/"
+  posts = "/posts/:title/"
 
 [markup.goldmark.renderer]
   # Allow HTML in Markdown
