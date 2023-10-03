@@ -12,5 +12,3 @@ My interests include programming, video-games, cycling, and tennis. I am also a 
 
 Although I am not actively using social media, please feel free to
 email me at [gokhan@hey.com](mailto:gokhan@hey.com) if you have any enquiries.
-
-If you are unreasonable enough; you can send me a [POST request](/post-request) too.
