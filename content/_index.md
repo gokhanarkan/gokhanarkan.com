@@ -2,7 +2,7 @@
 title: "Gökhan Arkan"
 ---
 
-I am a software engineer based in London, UK🇬🇧, originally from Istanbul, Türkiye🇹🇷.
+I am a software engineer & comedian based in London, UK🇬🇧, originally from Istanbul, Türkiye🇹🇷.
 
 I am working as one of the founding engineers for a company called [Surfe](https://www.surfe.com) since 2021 which is based in Paris, France🇫🇷.
 
